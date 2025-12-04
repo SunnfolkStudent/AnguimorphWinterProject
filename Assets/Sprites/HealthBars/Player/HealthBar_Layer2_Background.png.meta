@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 58f77c9c35ba444349b7f14f13e6f5e0
+guid: 8978e5b04fa0b468ba9e7f17b422fa5a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6994930756002668374
-    second: hpBarHandle_0
+      213: 6427998445179152647
+    second: HealthBar_Layer2_Background_0
+  - first:
+      213: 4341552622893388807
+    second: HealthBar_Layer2_Background_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,30 +112,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hpBarHandle_0
+      name: HealthBar_Layer2_Background_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1
-        height: 8
+        x: 4
+        y: 12
+        width: 26
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aa0a104c9830dee90800000000000000
-      internalID: -6994930756002668374
+      spriteID: 709aaa56786d43950800000000000000
+      internalID: 6427998445179152647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthBar_Layer2_Background_1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1
+        width: 123
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 704d935ab1b404c30800000000000000
+      internalID: 4341552622893388807
       vertices: []
       indices: 
       edges: []
@@ -161,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      hpBarHandle_0: -6994930756002668374
+      HealthBar_Layer2_Background_0: 6427998445179152647
+      HealthBar_Layer2_Background_1: 4341552622893388807
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
