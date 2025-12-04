@@ -1,7 +1,7 @@
 using UnityEngine;
 using Mirror;
 using UnityEngine.InputSystem;
-public class InputManager : NetworkBehaviour
+public class InputManager : MonoBehaviour
 {
     private TouchControls _touchControls;
     
@@ -11,8 +11,11 @@ public class InputManager : NetworkBehaviour
 
     void Awake()
     {
-        _touchControls.Enable();
+        _touchControls = new TouchControls();
+        
     }
+    private void OnEnable() { _touchControls.Enable();}
+    private void OnDisable() { _touchControls.Disable();}
 
     void Update()
     {
@@ -21,8 +24,7 @@ public class InputManager : NetworkBehaviour
         
     }
     
-    private void onDisable() { _touchControls.Disable();}
-    private void onEnable() { _touchControls.Enable();}
+    
 
 
     
