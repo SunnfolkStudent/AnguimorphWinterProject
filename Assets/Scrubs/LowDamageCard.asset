@@ -15,5 +15,5 @@ MonoBehaviour:
   cardName: pepepepepe
   cardType: 0
   description: peeeeeeeee
-  cardArtwork: {fileID: 0}
+  cardArtwork: {fileID: -8489131700749403836, guid: 292fd2fd192d2422da64b1879b6f9da7, type: 3}
   Attack: 5

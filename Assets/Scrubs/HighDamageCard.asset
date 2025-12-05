@@ -15,5 +15,5 @@ MonoBehaviour:
   cardName: hahahahahah
   cardType: 0
   description: ahahahahahah
-  cardArtwork: {fileID: 0}
+  cardArtwork: {fileID: 5172271634770257241, guid: 99bdaa1d86cfb44eb96b9882e2a58107, type: 3}
   Attack: 10

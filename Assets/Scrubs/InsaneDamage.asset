@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c54031f3e200557438c8cd11b8cf163f, type: 3}
-  m_Name: MediumDamageCard
+  m_Name: InsaneDamage
   m_EditorClassIdentifier: Assembly-CSharp::CardScrub
-  cardName: popopopopopopo
+  cardName: hksjdfhksbhfsb
   cardType: 0
-  description: poooooooooo
-  cardArtwork: {fileID: 8838218886407348427, guid: 390094874559f4fd1b8476ece16d5391, type: 3}
-  Attack: 1
+  description: fsdiufiuhcbvlui
+  cardArtwork: {fileID: -4257312822007031773, guid: a51bee6eb29e1487995035fd73187865, type: 3}
+  Attack: 15
