@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Mirror;
 using TMPro;
 
@@ -25,5 +26,9 @@ public class StackManager : NetworkBehaviour
 	{
 		LastPlayedCard = card;
 		text.text = LastPlayedCard.ToString();
+		OnPlayCard.Invoke();
+		
 	}
+	
+	public UnityEvent OnPlayCard;
 }

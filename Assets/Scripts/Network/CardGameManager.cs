@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using Mirror;
 using TMPro;
@@ -29,4 +30,18 @@ public class CardGameManager : NetworkManager
 	    players.Add(player);
 			   
     }
+
+    public override void OnClientConnect()
+    {
+	    base.OnClientConnect();
+	    OnConnected.Invoke();
+    }
+    public UnityEvent OnConnected;
+
+    public override void OnClientDisconnect()
+    {
+	    base.OnClientDisconnect();
+	    OnDisconnected.Invoke();
+    }
+    public UnityEvent OnDisconnected;
 }
