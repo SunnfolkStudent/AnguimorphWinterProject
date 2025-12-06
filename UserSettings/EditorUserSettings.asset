@@ -17,8 +17,22 @@ EditorUserSettings:
     RecentlyUsedSceneGuid-3:
       value: 50025155010d515a0c0a5b7012260c441716412b7c7a226729714d62e4b36d68
       flags: 0
+<<<<<<< HEAD
+    RecentlyUsedSceneGuid-2:
+      value: 5b08555e51005d03555b55274321094445154c2c2e7a7169757d1930b0e2643c
+      flags: 0
+    RecentlyUsedSceneGuid-3:
+      value: 5b54045f57530803585a082015775e4242154f7e74712333297c1f66e0b9323d
+      flags: 0
+    RecentlyUsedSceneGuid-4:
+      value: 0102045f55015e0e5c575c771470594412161b2e297e74312e714836e1b7376a
+      flags: 0
+    RecentlyUsedSceneGuid-5:
+      value: 5409035356500b0e5f58557543760b44451519737d797e31782d186be3e6663a
+=======
     RecentlyUsedSceneGuid-4:
       value: 05075707530058035c5809741570064414151c7f7e7f7163757c4460b5e4676c
+>>>>>>> origin/main
       flags: 0
     lightmappingBakingProfile:
       value: 51
