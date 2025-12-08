@@ -23,15 +23,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Swipe",
-                    "type": "Value",
-                    "id": "774d3ff1-38d3-407f-b517-33eedace31e5",
-                    "expectedControlType": "Delta",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -49,22 +40,11 @@
                 {
                     "name": "",
                     "id": "b4e06405-bb2d-440e-9e71-6be52ec3c13a",
-                    "path": "<Touchscreen>/Press",
+                    "path": "<Touchscreen>/primaryTouch/tap",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "TouchPress",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "bab36d8b-8c02-4888-978f-7bf66cbf32a9",
-                    "path": "<Touchscreen>/primaryTouch/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Swipe",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
