@@ -55,7 +55,11 @@ public class CardHandController : MonoBehaviour
             
         }
     }
-    
+
+    void DrawCards()
+    {
+        
+    }    
     void CardSelected(GameObject SelectedCard)
         {
             SelectedCard.transform.position += new Vector3(0, 2, 0);
