@@ -9,13 +9,9 @@ public class Card : ScriptableObject
     public Sprite artwork;
 
     public int attack;
+    public float damageReduction;
 
     public CardTypes cardType;
-
-    public void ApplyDamage(int currentHealth)
-    {
-        currentHealth -= attack;
-    }
 
     public enum CardTypes
     {

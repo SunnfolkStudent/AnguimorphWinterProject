@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 364042292}
   - component: {fileID: 364042291}
   m_Layer: 5
-  m_Name: ActionCard
+  m_Name: DamageReduceCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -436,7 +436,7 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  card: {fileID: 11400000, guid: a957502bb7144c24d966596761ec9f34, type: 2}
+  card: {fileID: 11400000, guid: 19cb8887f33886243b700fad4cb62f57, type: 2}
   nameText: {fileID: 318673470}
   descriptionText: {fileID: 1577020197}
   artworkImage: {fileID: 1429931249}
@@ -1192,6 +1192,10 @@ PrefabInstance:
       propertyPath: sceneId
       value: 1732183107
       objectReference: {fileID: 0}
+    - target: {fileID: 7706124359726198356, guid: c8347f88478e8114e8c90d80bc3565f6, type: 3}
+      propertyPath: card
+      value: 
+      objectReference: {fileID: 11400000, guid: 19cb8887f33886243b700fad4cb62f57, type: 2}
     - target: {fileID: 7706124359726198356, guid: c8347f88478e8114e8c90d80bc3565f6, type: 3}
       propertyPath: takeDamage
       value: 
