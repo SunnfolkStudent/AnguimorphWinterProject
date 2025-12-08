@@ -16,6 +16,7 @@ public class TestPlayerHealthBar : NetworkBehaviour
 
     public void TakeDamage(int damage)
     {
+        
         currentHealth -= damage;
         SetHealth(currentHealth);
         if (currentHealth <= 0)
