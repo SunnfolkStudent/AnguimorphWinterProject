@@ -5,6 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using Mirror;
 using TMPro;
+using UnityEngine.UIElements;
 
 /*
 	Documentation: https://mirror-networking.gitbook.io/docs/components/network-manager
@@ -27,6 +28,8 @@ public class CardGameManager : NetworkManager
 	    Transform start = numPlayers == 0 ? hostSpawn : clientSpawn;
 	    GameObject player = Instantiate(playerPrefab, start.position, start.rotation);
 	    NetworkServer.AddPlayerForConnection(conn, player);
+	    player.GetComponentInChildren<TestScriptNetwork>().PlayerID = conn.connectionId;
+	    player.GetComponentInChildren<TestScriptNetwork>().HealthPoints = 100;
 	    players.Add(player);
 			   
     }
@@ -42,6 +45,15 @@ public class CardGameManager : NetworkManager
     {
 	    base.OnClientDisconnect();
 	    OnDisconnected.Invoke();
+    }
+
+    public void DamagePlayer(int damage, int playerID)
+    {
+	    foreach (GameObject player in players)
+		    if (player.gameObject.GetComponentInChildren<TestScriptNetwork>().PlayerID != playerID)
+		    {
+			    player.GetComponentInChildren<TestScriptNetwork>().HealthPoints -= damage;
+		    }
     }
     public UnityEvent OnDisconnected;
 }

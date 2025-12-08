@@ -12,6 +12,8 @@ using TMPro;
 public class StackManager : NetworkBehaviour
 {
 	[SyncVar]private int LastPlayedCard;
+	[SyncVar] private int ActivePlayer;
+	[SerializeField] private TMP_Text activePlayerText;
 	[SerializeField] private TMP_Text text;
 	public static StackManager Instance;
 
@@ -20,14 +22,26 @@ public class StackManager : NetworkBehaviour
 		if (Instance == null) Instance = this;
 		else Destroy(this);
 	}
+
+	private void FixedUpdate()
+	{
+		if (ActivePlayer != null)
+		{
+			activePlayerText.text = ActivePlayer.ToString();
+		}
+	}
 	
 	[ClientRpc]
-	public void RpcPlayCard(int card)																	
+	public void RpcPlayCard(int card, int playerID)																	
 	{
-		LastPlayedCard = card;
-		text.text = LastPlayedCard.ToString();
-		OnPlayCard.Invoke();
-		
+		if (playerID != ActivePlayer)
+		{
+			LastPlayedCard = card;
+			ActivePlayer = playerID;
+			text.text = "Player "+ActivePlayer+" Played:"+LastPlayedCard;
+			CardGameManager.singleton.DamagePlayer(card, playerID);
+			OnPlayCard.Invoke();
+		}
 	}
 	
 	public UnityEvent OnPlayCard;
