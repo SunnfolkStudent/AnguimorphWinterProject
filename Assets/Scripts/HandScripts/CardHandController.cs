@@ -9,10 +9,12 @@ using TouchPhase = UnityEngine.TouchPhase;
 
 public class CardHandController : MonoBehaviour
 {
+    public Card SOcard;
     public List<GameObject> cards;
     public DeckList Deck;
     
     [SerializeField] private int handMaximum = 3;
+    [SerializeField] private GameObject CardPrefab;
     
     //private int amount = 3;
 
@@ -77,9 +79,12 @@ public class CardHandController : MonoBehaviour
             Debug.Log("passed not null");
             for (int i = 0; i < handMaximum; i++)
             {
-                Debug.Log("loop "+ i);
+                
                 cards.Add(Deck.deckList[randCard]);
                 CardHandPositioning();
+                var spawnedCard = Instantiate(CardPrefab);
+                
+                spawnedCard.GetComponent<AttackCardDisplay>().card = SOcard;
             }
             
         }
