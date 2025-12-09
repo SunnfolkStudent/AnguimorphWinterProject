@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Card
   ID: 1
   Name: Bar Stool
-  Description: Reduce Incoming Damage To 1
+  Description: Reduce To 1 Damage
   artwork: {fileID: 0}
   attack: 0
   damageReduction: 0.1

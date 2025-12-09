@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Mirror;
 using Unity.Mathematics;
 using UnityEngine;
@@ -7,8 +9,13 @@ using TouchPhase = UnityEngine.TouchPhase;
 
 public class CardHandController : MonoBehaviour
 {
-    public GameObject[] cards;
-
+    public Card SOcard;
+    public List<GameObject> cards;
+    public DeckList Deck;
+    
+    [SerializeField] private int handMaximum = 3;
+    [SerializeField] private GameObject CardPrefab;
+    
     //private int amount = 3;
 
     public float spacing = 3f;
@@ -17,6 +24,7 @@ public class CardHandController : MonoBehaviour
 
     private void Start()
     {
+        DrawCards();
         CardHandPositioning();
        
     }
@@ -27,10 +35,14 @@ public class CardHandController : MonoBehaviour
 //reset position
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            for (int i = 0; cards.Length > i; i++)
+            for (int i = 0; cards.Count > i; i++)
             {
                 cards[i].transform.position = new Vector2(0, 0);
             }
+        }
+        if (Keyboard.current.dKey.wasPressedThisFrame)
+        {
+            DrawCards();
         }
 
         if (Input.touchCount > 0)
@@ -39,18 +51,20 @@ public class CardHandController : MonoBehaviour
 
             if (touch.phase == phaseEnded)
             {
-                touchPosWorld = Camera.main.ScreenToWorldPoint(touch.position);
-                Vector2 touchPosWorld2D = new  Vector2(touchPosWorld.x, touchPosWorld.y);
-                
-                RaycastHit2D hitInformation = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward);
-
-                if (hitInformation.collider != null)
+                if (Camera.main != null)
                 {
-                    GameObject SelectedCard = hitInformation.transform.gameObject;
-                    
-                    Debug.Log("Touched "+ SelectedCard.transform.name);
-                    CardSelected(SelectedCard = SelectedCard.transform.gameObject);
+                   touchPosWorld = Camera.main.ScreenToWorldPoint(touch.position); Vector2 touchPosWorld2D = new  Vector2(touchPosWorld.x, touchPosWorld.y);
+                                   
+                   RaycastHit2D hitInformation = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward);
+                   if (hitInformation.collider != null)
+                   {
+                       GameObject SelectedCard = hitInformation.transform.gameObject;
+                       
+                       Debug.Log("Touched "+ SelectedCard.transform.name);
+                       CardSelected(SelectedCard = SelectedCard.transform.gameObject);
+                   } 
                 }
+                
             }
             
         }
@@ -58,6 +72,23 @@ public class CardHandController : MonoBehaviour
 
     void DrawCards()
     {
+        int randCard = UnityEngine.Random.Range(0,Deck.deckList.Count);
+        Debug.Log(randCard);
+        if (Deck.deckList[randCard] != null)
+        {
+            Debug.Log("passed not null");
+            for (int i = 0; i < handMaximum; i++)
+            {
+                
+                cards.Add(Deck.deckList[randCard]);
+                CardHandPositioning();
+                var spawnedCard = Instantiate(CardPrefab);
+                
+                spawnedCard.GetComponent<AttackCardDisplay>().card = SOcard;
+            }
+            
+        }
+        
         
     }    
     void CardSelected(GameObject SelectedCard)
@@ -66,7 +97,7 @@ public class CardHandController : MonoBehaviour
         }
      void CardHandPositioning()
     {
-        for (int i = 0; cards.Length > i; i++)
+        for (int i = 0; cards.Count > i; i++)
         {
             //Sondres Demo for advanced card interface. WIP*
             //double SetPosition = 1 / (1 + Mathf.Pow(math.E, - cards.Length * 2.5f * (i / amount - 0.5f)));
