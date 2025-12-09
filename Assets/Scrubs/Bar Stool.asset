@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: Bar Stool
   Description: Reduce Incoming Damage To 1
   artwork: {fileID: 0}
-  attack: 8
+  attack: 0
   damageReduction: 0.1
   cardType: 2
