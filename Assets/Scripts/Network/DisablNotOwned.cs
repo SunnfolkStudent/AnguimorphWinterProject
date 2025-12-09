@@ -37,7 +37,12 @@ public class DisablNotOwned : NetworkBehaviour
         {
             foreach (Component comp in ComponentsToDisable)
             {
-                if (comp.gameObject.GetComponent<Button>())  comp.gameObject.GetComponent<Button>().interactable = false;
+                if (comp.gameObject.GetComponent<Button>())
+                {
+                    comp.gameObject.GetComponent<Button>().interactable = false;
+                    comp.gameObject.GetComponent<Image>().enabled = false;
+                }
+
                 if (comp.gameObject.GetComponentInChildren<TMP_Text>())    comp.gameObject.GetComponentInChildren<TMP_Text>().gameObject.SetActive(false);
             }
         }
