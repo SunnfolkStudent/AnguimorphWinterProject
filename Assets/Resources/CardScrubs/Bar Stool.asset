@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5310e81ba85c3c942b248e5f71072bea, type: 3}
-  m_Name: Fake ID
+  m_Name: Bar Stool
   m_EditorClassIdentifier: Assembly-CSharp::Card
-  Name: Fake ID
-  Description: Draw A Card
+  ID: 1
+  Name: Bar Stool
+  Description: Reduce To 1 Damage
   artwork: {fileID: 0}
   attack: 0
-  cardType: 1
+  damageReduction: 0.1
+  cardType: 2

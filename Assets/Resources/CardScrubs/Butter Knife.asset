@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5310e81ba85c3c942b248e5f71072bea, type: 3}
   m_Name: Butter Knife
   m_EditorClassIdentifier: Assembly-CSharp::Card
+  ID: 2
   Name: Butter Knife
   Description: Deal 3 Damage
   artwork: {fileID: 0}
   attack: 3
+  damageReduction: 0
   cardType: 0
