@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5310e81ba85c3c942b248e5f71072bea, type: 3}
   m_Name: TestCard1
   m_EditorClassIdentifier: Assembly-CSharp::Card
+  ID: 7
   Name: Inigo
   Description: you killed me fatter
   artwork: {fileID: -3084660646907370487, guid: 48bea47ee70974db187f86823d3bd0e1, type: 3}
   attack: 5
+  damageReduction: 0
+  cardType: 0

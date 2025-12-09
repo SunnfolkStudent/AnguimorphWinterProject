@@ -13,7 +13,10 @@ public class TestScriptNetwork : NetworkBehaviour
     [SerializeField]
     private int number
     {
-        get { return Random.Range(0,101); }
+        get
+        {
+            return Random.Range(0,CardGameManager.singleton.cards.Count);
+        }
     }
     [SerializeField] private HealthBar healthBar;
 

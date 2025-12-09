@@ -409,6 +409,15 @@ MonoBehaviour:
   evaluationInterval: 3
   timeInterpolationGui: 0
   players: []
+  cards:
+  - {fileID: 11400000, guid: 1a148cbf0e4a33942a96f2ea9683a5de, type: 2}
+  - {fileID: 11400000, guid: d7c33e794bdedd249b76c1c2cb30eb98, type: 2}
+  - {fileID: 11400000, guid: 4e7f17c7abd05c64ba996be8e9dde542, type: 2}
+  - {fileID: 11400000, guid: 19cb8887f33886243b700fad4cb62f57, type: 2}
+  - {fileID: 11400000, guid: a957502bb7144c24d966596761ec9f34, type: 2}
+  - {fileID: 11400000, guid: 957e66655afcd1e4e8bca9e7b0d358b9, type: 2}
+  - {fileID: 11400000, guid: 179fddb93b1c28d449925affba03234d, type: 2}
+  - {fileID: 11400000, guid: 00ca4988a9ed7c447b89ed2040e7cadf, type: 2}
   hostSpawn: {fileID: 1763036167}
   clientSpawn: {fileID: 1414096575}
   OnConnected:
@@ -605,6 +614,7 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
+  cards: []
   activePlayerText: {fileID: 39722254}
   text: {fileID: 1903202635}
   OnPlayCard:

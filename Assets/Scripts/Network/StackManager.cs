@@ -12,7 +12,13 @@ using TMPro;
 public class StackManager : NetworkBehaviour
 {
 	[SyncVar]private int LastPlayedCard;
-	[SyncVar] private int ActivePlayer;
+	[SyncVar]private int ActivePlayer;
+
+	[SerializeField]
+	private List<Card> cards
+	{
+		get { return CardGameManager.singleton.cards; }
+	}
 	[SerializeField] private TMP_Text activePlayerText;
 	[SerializeField] private TMP_Text text;
 	public static StackManager Instance;
@@ -32,15 +38,22 @@ public class StackManager : NetworkBehaviour
 	}
 	
 	[ClientRpc]
-	public void RpcPlayCard(int card, int playerID)																	
+	public void RpcPlayCard(int cardID, int playerID)																	
 	{
 		if (playerID != ActivePlayer)
 		{
-			LastPlayedCard = card;
+			LastPlayedCard = cardID;
 			ActivePlayer = playerID;
 			text.text = "Player "+ActivePlayer+" Played:"+LastPlayedCard;
-			CardGameManager.singleton.DamagePlayer(card, playerID);
-			OnPlayCard.Invoke();
+			foreach (Card card in cards)
+			{
+				if (card.ID == cardID)
+				{
+					CardGameManager.singleton.DamagePlayer(card.attack, playerID);
+					Debug.Log(card.Name + " damaged");
+					OnPlayCard.Invoke();
+				}
+			}
 		}
 	}
 	

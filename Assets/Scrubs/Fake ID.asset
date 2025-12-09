@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5310e81ba85c3c942b248e5f71072bea, type: 3}
   m_Name: Fake ID
   m_EditorClassIdentifier: Assembly-CSharp::Card
+  ID: 4
   Name: Fake ID
   Description: Draw A Card
   artwork: {fileID: 0}
   attack: 0
+  damageReduction: 0
   cardType: 1

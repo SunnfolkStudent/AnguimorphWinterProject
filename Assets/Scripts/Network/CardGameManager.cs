@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -15,13 +17,13 @@ using UnityEngine.UIElements;
 public class CardGameManager : NetworkManager
 {
 	[SerializeField] private List<GameObject> players;
+	public List<Card> cards;
 	[SerializeField] private Transform hostSpawn;
 	[SerializeField] private Transform clientSpawn;
     // Overrides the base singleton so we don't
     // have to cast to this type everywhere.
     public static new CardGameManager singleton => (CardGameManager)NetworkManager.singleton;
-    
-    
+
     public override void OnServerAddPlayer(NetworkConnectionToClient conn)
     {
 	    // add player at correct spawn position

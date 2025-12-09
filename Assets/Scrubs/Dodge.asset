@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5310e81ba85c3c942b248e5f71072bea, type: 3}
   m_Name: Dodge
   m_EditorClassIdentifier: Assembly-CSharp::Card
+  ID: 3
   Name: Dodge
   Description: Reduce Incoming Damage By Half
   artwork: {fileID: 0}
