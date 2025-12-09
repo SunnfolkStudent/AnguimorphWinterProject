@@ -17,12 +17,27 @@ using UnityEngine.UIElements;
 public class CardGameManager : NetworkManager
 {
 	[SerializeField] private List<GameObject> players;
-	public List<Card> cards;
+	public List<Card> cards
+	{
+		get
+		{
+			return Resources.LoadAll<Card>("CardScrubs").ToList();
+		}
+	}
 	[SerializeField] private Transform hostSpawn;
 	[SerializeField] private Transform clientSpawn;
     // Overrides the base singleton so we don't
     // have to cast to this type everywhere.
     public static new CardGameManager singleton => (CardGameManager)NetworkManager.singleton;
+
+    public override void Awake()
+    {
+	    base.Awake();
+	    foreach (Card card in cards)
+	    {
+		    Debug.Log(card.name);
+	    }
+    }
 
     public override void OnServerAddPlayer(NetworkConnectionToClient conn)
     {
