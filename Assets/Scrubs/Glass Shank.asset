@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5310e81ba85c3c942b248e5f71072bea, type: 3}
   m_Name: Glass Shank
   m_EditorClassIdentifier: Assembly-CSharp::Card
+  ID: 0
   Name: Glass Shank
   Description: Deal 10 Damage
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: a89a9143c9d3c4194b6ae260dcee7ac5, type: 3}
   attack: 10
+  damageReduction: 0
   cardType: 0

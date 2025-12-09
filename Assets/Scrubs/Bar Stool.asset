@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5310e81ba85c3c942b248e5f71072bea, type: 3}
   m_Name: Bar Stool
   m_EditorClassIdentifier: Assembly-CSharp::Card
+  ID: 0
   Name: Bar Stool
-  Description: Reduce Incoming Damage To 1
+  Description: Reduce To 1 Damage
   artwork: {fileID: 0}
   attack: 0
   damageReduction: 0.1
