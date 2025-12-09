@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: Dodge
   Description: Reduce Incoming Damage By Half
   artwork: {fileID: 0}
-  attack: 8
+  attack: 0
   damageReduction: 0.5
   cardType: 3
