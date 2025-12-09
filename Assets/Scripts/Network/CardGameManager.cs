@@ -46,6 +46,7 @@ public class CardGameManager : NetworkManager
 	    GameObject player = Instantiate(playerPrefab, start.position, start.rotation);
 	    NetworkServer.AddPlayerForConnection(conn, player);
 	    player.GetComponentInChildren<TestScriptNetwork>().PlayerID = conn.connectionId;
+	    player.GetComponentInChildren<TestScriptNetwork>().Player.GetComponent<RectTransform>().position = start.position;
 	    player.GetComponentInChildren<TestScriptNetwork>().HealthPoints = 100;
 	    players.Add(player);
 			   

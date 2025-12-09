@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 public class TestScriptNetwork : NetworkBehaviour
 {
     [SyncVar] public int PlayerID;
+    public GameObject Player;
     [SerializeField] StackManager stackManager;
 
     [SerializeField]

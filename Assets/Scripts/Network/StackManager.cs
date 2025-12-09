@@ -43,8 +43,9 @@ public class StackManager : NetworkBehaviour
 		if (playerID != ActivePlayer)
 		{
 			LastPlayedCard = cardID;
+			var  activeCard = CardGameManager.singleton.cards.Find(x => x.ID == cardID).name;
 			ActivePlayer = playerID;
-			text.text = "Player "+ActivePlayer+" Played:"+LastPlayedCard;
+			text.text = "Player "+ActivePlayer+" Played:"+activeCard.ToString();
 			foreach (Card card in cards)
 			{
 				if (card.ID == cardID)
