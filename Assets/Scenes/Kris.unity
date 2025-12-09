@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &164117969 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7946799486736855561, guid: c8347f88478e8114e8c90d80bc3565f6, type: 3}
+  m_PrefabInstance: {fileID: 1823021531}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &186527048
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,9 +216,13 @@ PrefabInstance:
       value: 2078136511
       objectReference: {fileID: 0}
     - target: {fileID: 4813748632635245305, guid: d5440c7054a8f4a4c8ce2b755c42992c, type: 3}
+      propertyPath: deckList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813748632635245305, guid: d5440c7054a8f4a4c8ce2b755c42992c, type: 3}
       propertyPath: 'deckList.Array.data[0]'
       value: 
-      objectReference: {fileID: 1372130302}
+      objectReference: {fileID: 164117969}
     - target: {fileID: 4813748632635245305, guid: d5440c7054a8f4a4c8ce2b755c42992c, type: 3}
       propertyPath: 'deckList.Array.data[1]'
       value: 
@@ -857,9 +866,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1e070328d98e843ad639f55f8e1a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardHandController
+  SOcard: {fileID: 0}
   cards: []
   Deck: {fileID: 314007387}
   handMaximum: 3
+  CardPrefab: {fileID: 0}
   spacing: 3
 --- !u!1001 &1823021531
 PrefabInstance:
@@ -953,10 +964,54 @@ PrefabInstance:
       propertyPath: sceneId
       value: 702638362
       objectReference: {fileID: 0}
+    - target: {fileID: 6774636534567705704, guid: c8347f88478e8114e8c90d80bc3565f6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774636534567705704, guid: c8347f88478e8114e8c90d80bc3565f6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774636534567705704, guid: c8347f88478e8114e8c90d80bc3565f6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774636534567705704, guid: c8347f88478e8114e8c90d80bc3565f6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774636534567705704, guid: c8347f88478e8114e8c90d80bc3565f6, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774636534567705704, guid: c8347f88478e8114e8c90d80bc3565f6, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774636534567705704, guid: c8347f88478e8114e8c90d80bc3565f6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774636534567705704, guid: c8347f88478e8114e8c90d80bc3565f6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774636534567705704, guid: c8347f88478e8114e8c90d80bc3565f6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774636534567705704, guid: c8347f88478e8114e8c90d80bc3565f6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774636534567705704, guid: c8347f88478e8114e8c90d80bc3565f6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7706124359726198356, guid: c8347f88478e8114e8c90d80bc3565f6, type: 3}
       propertyPath: card
       value: 
-      objectReference: {fileID: 11400000, guid: d7c33e794bdedd249b76c1c2cb30eb98, type: 2}
+      objectReference: {fileID: 11400000, guid: 1a148cbf0e4a33942a96f2ea9683a5de, type: 2}
     - target: {fileID: 7946799486736855561, guid: c8347f88478e8114e8c90d80bc3565f6, type: 3}
       propertyPath: m_Name
       value: DamageCard
