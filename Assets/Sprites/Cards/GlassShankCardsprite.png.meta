@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8787b10b5764044979abeda76f4a5e15
+guid: a89a9143c9d3c4194b6ae260dcee7ac5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1486315183669323955
-    second: SuckerPunchCardsprite 1_0
+      213: -6379973044156588227
+    second: glass shank_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SuckerPunchCardsprite 1_0
+      name: glass shank_0
       rect:
         serializedVersion: 2
-        x: 8
+        x: 14
         y: 0
-        width: 69
-        height: 93
+        width: 65
+        height: 97
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3b821e2e8c370a410800000000000000
-      internalID: 1486315183669323955
+      spriteID: d3f9a72a158c577a0800000000000000
+      internalID: -6379973044156588227
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SuckerPunchCardsprite 1_0: 1486315183669323955
+      glass shank_0: -6379973044156588227
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
