@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8787b10b5764044979abeda76f4a5e15
+guid: bdc170ca54923482d9f765f7a6fcc81f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1486315183669323955
-    second: SuckerPunchCardsprite 1_0
+      213: 4361140815089004296
+    second: fake id_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SuckerPunchCardsprite 1_0
+      name: fake id_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 0
-        width: 69
-        height: 93
+        x: 4
+        y: 3
+        width: 76
+        height: 83
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3b821e2e8c370a410800000000000000
-      internalID: 1486315183669323955
+      spriteID: 80f66da0772e58c30800000000000000
+      internalID: 4361140815089004296
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SuckerPunchCardsprite 1_0: 1486315183669323955
+      fake id_0: 4361140815089004296
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
