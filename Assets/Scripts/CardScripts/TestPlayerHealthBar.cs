@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Mirror;
+using UnityEngine.SceneManagement;
 
 public class TestPlayerHealthBar : NetworkBehaviour
 {
@@ -39,5 +40,6 @@ public class TestPlayerHealthBar : NetworkBehaviour
     void Die()
     {
         Debug.Log(gameObject.name + " has died");
+        SceneManager.LoadScene("LoseScene");
     }
 }
