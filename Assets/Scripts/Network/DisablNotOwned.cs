@@ -11,6 +11,7 @@ using UnityEngine.UI;
 
 public class DisablNotOwned : NetworkBehaviour
 {
+    [SerializeField] private List<Component> ComponentsToDisable;
     #region Unity Callbacks
 
     /// <summary>
@@ -34,11 +35,15 @@ public class DisablNotOwned : NetworkBehaviour
         }
         else if (!isLocalPlayer && isServer)
         {
-            foreach (Image rend in GetComponentsInChildren<Image>())
+            foreach (Component comp in ComponentsToDisable)
             {
-                rend.enabled = false;
-                rend.gameObject.GetComponent<Button>().interactable = false;
-                rend.gameObject.GetComponentInChildren<TMP_Text>().gameObject.SetActive(false);
+                if (comp.gameObject.GetComponent<Button>())
+                {
+                    comp.gameObject.GetComponent<Button>().interactable = false;
+                    comp.gameObject.GetComponent<Image>().enabled = false;
+                }
+
+                if (comp.gameObject.GetComponentInChildren<TMP_Text>())    comp.gameObject.GetComponentInChildren<TMP_Text>().gameObject.SetActive(false);
             }
         }
     }

@@ -6,9 +6,12 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private Slider slider;
     [SerializeField] private int maxHealth;
 
+    public int CurrentHealth
+    {
+        get { return currentHealth; }
+    }
     private int currentHealth
     {
-
         get
         {
            
