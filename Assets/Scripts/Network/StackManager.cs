@@ -11,7 +11,7 @@ using TMPro;
 
 public class StackManager : NetworkBehaviour
 {
-	[SyncVar]private int LastPlayedCard;
+	private GameObject LastPlayedCard;
 	[SyncVar]private int ActivePlayer;
 
 	[SerializeField]
@@ -19,6 +19,7 @@ public class StackManager : NetworkBehaviour
 	{
 		get { return CardGameManager.singleton.cards; }
 	}
+	[SerializeField] private GameObject cardPrefab;
 	[SerializeField] private TMP_Text activePlayerText;
 	[SerializeField] private TMP_Text text;
 	public static StackManager Instance;
@@ -42,16 +43,16 @@ public class StackManager : NetworkBehaviour
 	{
 		if (playerID != ActivePlayer)
 		{
-			LastPlayedCard = cardID;
-			var  activeCard = CardGameManager.singleton.cards.Find(x => x.ID == cardID).name;
 			ActivePlayer = playerID;
-			text.text = "Player "+ActivePlayer+" Played:"+activeCard.ToString();
+			Destroy(LastPlayedCard);
 			foreach (Card card in cards)
 			{
 				if (card.ID == cardID)
 				{
 					CardGameManager.singleton.DamagePlayer(card.attack, playerID);
-					Debug.Log(card.Name + " damaged");
+					LastPlayedCard = Instantiate(cardPrefab, GetComponentInChildren<Canvas>().gameObject.transform);
+					LastPlayedCard.GetComponent<AttackCardDisplay>().card = card;
+					text.text = "Player "+ActivePlayer+" Played:"+card.name;
 					OnPlayCard.Invoke();
 				}
 			}

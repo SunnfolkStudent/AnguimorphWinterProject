@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 2
   Name: Butter Knife
   Description: Deal 3 Damage
-  artwork: {fileID: 0}
+  artwork: {fileID: -4257312822007031773, guid: a51bee6eb29e1487995035fd73187865, type: 3}
   attack: 3
   damageReduction: 0
   cardType: 0

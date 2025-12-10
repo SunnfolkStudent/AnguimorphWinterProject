@@ -24,8 +24,8 @@ public class CardGameManager : NetworkManager
 			return Resources.LoadAll<Card>("CardScrubs").ToList();
 		}
 	}
-	[SerializeField] private Transform hostSpawn;
-	[SerializeField] private Transform clientSpawn;
+	public Transform hostSpawn;
+	public Transform clientSpawn;
     // Overrides the base singleton so we don't
     // have to cast to this type everywhere.
     public static new CardGameManager singleton => (CardGameManager)NetworkManager.singleton;
@@ -43,10 +43,9 @@ public class CardGameManager : NetworkManager
     {
 	    // add player at correct spawn position
 	    Transform start = numPlayers == 0 ? hostSpawn : clientSpawn;
-	    GameObject player = Instantiate(playerPrefab, start.position, start.rotation);
+	    GameObject player = Instantiate(playerPrefab);
 	    NetworkServer.AddPlayerForConnection(conn, player);
 	    player.GetComponentInChildren<TestScriptNetwork>().PlayerID = conn.connectionId;
-	    player.GetComponentInChildren<TestScriptNetwork>().Player.GetComponent<RectTransform>().position = start.position;
 	    player.GetComponentInChildren<TestScriptNetwork>().HealthPoints = 100;
 	    players.Add(player);
 			   

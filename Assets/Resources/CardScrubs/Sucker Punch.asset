@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 6
   Name: Sucker Punch
   Description: Deal 5 Damage
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 8787b10b5764044979abeda76f4a5e15, type: 3}
   attack: 5
   damageReduction: 0
   cardType: 0

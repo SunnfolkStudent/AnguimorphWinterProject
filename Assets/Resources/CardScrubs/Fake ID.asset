@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 4
   Name: Fake ID
   Description: Draw A Card
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: bdc170ca54923482d9f765f7a6fcc81f, type: 3}
   attack: 0
   damageReduction: 0
   cardType: 1
