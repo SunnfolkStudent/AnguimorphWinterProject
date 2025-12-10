@@ -618,7 +618,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297313172}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.57, y: -0.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -838,9 +838,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1262772954}
   - {fileID: 1297313175}
   - {fileID: 1372130304}
-  - {fileID: 1262772954}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1777062132
@@ -856,13 +856,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CopyCardHandController
   cards:
+  - {fileID: 1262772951}
   - {fileID: 1297313172}
   - {fileID: 1372130302}
-  - {fileID: 1262772951}
   Deck: {fileID: 0}
   handMaximum: 3
   CardPrefab: {fileID: 0}
   spacing: 3
+  spread: 2.5
+  handHeight: 1
+  rotationalFactor: 10
+  offset: 0
+  sensitivity: 30
+  friction: 0.99
+  bounce: 20
 --- !u!1001 &1823021531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -933,11 +940,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1690157648414003637, guid: c8347f88478e8114e8c90d80bc3565f6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.91
+      value: 1.15
       objectReference: {fileID: 0}
     - target: {fileID: 1690157648414003637, guid: c8347f88478e8114e8c90d80bc3565f6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.91
+      value: -1.87
       objectReference: {fileID: 0}
     - target: {fileID: 1690157648414003637, guid: c8347f88478e8114e8c90d80bc3565f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
