@@ -41,7 +41,7 @@ public class StackManager : NetworkBehaviour
 	[ClientRpc]
 	public void RpcPlayCard(int cardID, int playerID)																	
 	{
-		if (playerID != ActivePlayer || CardGameManager.singleton.Players.Count <= 1)
+		if (playerID != ActivePlayer || (CardGameManager.singleton.Players.Count <= 1 && isServer))
 		{
 			ActivePlayer = playerID;
 			Destroy(LastPlayedCard);
@@ -52,12 +52,9 @@ public class StackManager : NetworkBehaviour
 					CardGameManager.singleton.DamagePlayer(card.attack, playerID);
 					LastPlayedCard = Instantiate(cardPrefab, GetComponentInChildren<Canvas>().gameObject.transform);
 					LastPlayedCard.GetComponent<AttackCardDisplay>().card = card;
-					text.text = "Player "+ActivePlayer+" Played:"+card.name;
-					OnPlayCard.Invoke();
 				}
 			}
 		}
 	}
 	
-	public UnityEvent OnPlayCard;
 }

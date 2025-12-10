@@ -47,9 +47,7 @@ public class CardGameManager : NetworkManager
 	    GameObject player = Instantiate(playerPrefab);
 	    NetworkServer.AddPlayerForConnection(conn, player);
 	    player.GetComponentInChildren<TestScriptNetwork>().PlayerID = conn.connectionId;
-	    player.GetComponentInChildren<TestScriptNetwork>().HealthPoints = 100;
 	    players.Add(player);
-			   
     }
 
     public override void OnClientConnect()
@@ -67,11 +65,29 @@ public class CardGameManager : NetworkManager
 
     public void DamagePlayer(int damage, int playerID)
     {
+
 	    foreach (GameObject player in players)
+	    {
+		    Debug.Log(player.GetComponentInChildren<TestScriptNetwork>().PlayerID+": played");
 		    if (player.gameObject.GetComponentInChildren<TestScriptNetwork>().PlayerID != playerID)
 		    {
+			    Debug.Log("Damaging player:"+player.gameObject.GetComponentInChildren<TestScriptNetwork>().PlayerID);
 			    player.GetComponentInChildren<TestScriptNetwork>().HealthPoints -= damage;
+			    if (player.GetComponentInChildren<TestScriptNetwork>().HealthPoints <= 0)
+			    {
+				    foreach (GameObject otherPlayer in players)
+				    {
+					    if (otherPlayer != player)
+					    {
+						    otherPlayer.GetComponentInChildren<TestScriptNetwork>().Win();
+
+					    }
+
+					    player.GetComponentInChildren<TestScriptNetwork>().Lose();
+				    }
+			    }
 		    }
+	    }
     }
     public UnityEvent OnDisconnected;
 }

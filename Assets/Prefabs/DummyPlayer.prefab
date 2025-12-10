@@ -308,7 +308,7 @@ MonoBehaviour:
   Player: {fileID: 7390085289059560634}
   stackManager: {fileID: 0}
   healthBar: {fileID: 4299365950102609138}
-  HealthPoints: 100
+  HealthPoints: 20
   healthText: {fileID: 7003787712429416550}
 --- !u!1 &6290681720757727763
 GameObject:
@@ -634,6 +634,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4693947049404252146}
     m_Modifications:
+    - target: {fileID: 1634509942141431979, guid: 83e947589c35c7e4d80ada2e41f6bbe8, type: 3}
+      propertyPath: maxHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1675925873526627750, guid: 83e947589c35c7e4d80ada2e41f6bbe8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -757,6 +761,14 @@ PrefabInstance:
     - target: {fileID: 8190404793876094536, guid: 83e947589c35c7e4d80ada2e41f6bbe8, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124460736611825230, guid: 83e947589c35c7e4d80ada2e41f6bbe8, type: 3}
+      propertyPath: m_Value
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124460736611825230, guid: 83e947589c35c7e4d80ada2e41f6bbe8, type: 3}
+      propertyPath: m_MaxValue
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 9124460736611825230, guid: 83e947589c35c7e4d80ada2e41f6bbe8, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
