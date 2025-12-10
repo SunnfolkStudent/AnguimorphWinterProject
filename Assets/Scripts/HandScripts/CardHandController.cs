@@ -9,7 +9,7 @@ using TouchPhase = UnityEngine.TouchPhase;
 
 public class CardHandController : MonoBehaviour
 {
-    public Card SOcard;
+    public List<Card> SOcard;
     public List<GameObject> cards;
     public DeckList Deck;
     
@@ -26,7 +26,9 @@ public class CardHandController : MonoBehaviour
     {
         DrawCards();
         CardHandPositioning();
-       
+
+        SOcard = Resources.LoadAll<Card>("CardScrubs").ToList();
+
     }
 
     private void Update()
@@ -77,15 +79,16 @@ public class CardHandController : MonoBehaviour
         if (Deck.deckList[randCard] != null)
         {
             Debug.Log("passed not null");
-            for (int i = 0; i < handMaximum; i++)
-            {
+            
+            
+            
+            cards.Add(Deck.deckList[randCard]);
+            CardHandPositioning();
+            var spawnedCard = Instantiate(CardPrefab, Vector3.zero, Quaternion.identity);
+            Debug.Log("end of script reached.");
+            //spawnedCard.GetComponent<AttackCardDisplay>().card = SOcard.Find(x => x.ID == 2);
                 
-                cards.Add(Deck.deckList[randCard]);
-                CardHandPositioning();
-                var spawnedCard = Instantiate(CardPrefab);
-                
-                spawnedCard.GetComponent<AttackCardDisplay>().card = SOcard;
-            }
+            
             
         }
         
