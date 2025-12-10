@@ -41,7 +41,7 @@ public class StackManager : NetworkBehaviour
 	[ClientRpc]
 	public void RpcPlayCard(int cardID, int playerID)																	
 	{
-		if (playerID != ActivePlayer)
+		if (playerID != ActivePlayer || CardGameManager.singleton.Players.Count <= 1)
 		{
 			ActivePlayer = playerID;
 			Destroy(LastPlayedCard);

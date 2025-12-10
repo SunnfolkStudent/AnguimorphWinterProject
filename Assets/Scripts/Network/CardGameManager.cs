@@ -17,6 +17,7 @@ using UnityEngine.UIElements;
 public class CardGameManager : NetworkManager
 {
 	[SerializeField] private List<GameObject> players;
+	public List<GameObject> Players { get { return players; } }
 	public List<Card> cards
 	{
 		get
