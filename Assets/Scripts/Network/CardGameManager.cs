@@ -25,10 +25,17 @@ public class CardGameManager : NetworkManager
 			return Resources.LoadAll<Card>("CardScrubs").ToList();
 		}
 	}
-	public Transform hostSpawn;
-	public Transform clientSpawn;
-    // Overrides the base singleton so we don't
-    // have to cast to this type everywhere.
+
+	public Transform hostSpawn
+	{
+		get { return GameObject.Find("HostSpawn").GetComponent<RectTransform>(); }
+	}
+
+	public Transform clientSpawn
+	{
+		get { return GameObject.Find("ClientSpawn").GetComponent<RectTransform>(); }
+	}
+
     public static new CardGameManager singleton => (CardGameManager)NetworkManager.singleton;
 
     public override void Awake()
@@ -85,6 +92,9 @@ public class CardGameManager : NetworkManager
 
 					    player.GetComponentInChildren<TestScriptNetwork>().Lose();
 				    }
+
+				    //StopClient();
+				    //StopHost();
 			    }
 		    }
 	    }

@@ -409,38 +409,12 @@ MonoBehaviour:
   evaluationInterval: 3
   timeInterpolationGui: 0
   players: []
-  hostSpawn: {fileID: 1746073533}
-  clientSpawn: {fileID: 980662482}
   OnConnected:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1680003666}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
-        m_MethodName: OnConnect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnDisconnected:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1680003666}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
-        m_MethodName: OnDisconnect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &213979777 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8788358085734248350, guid: 3fddb83f9508d4c4cb1985b5c032514a, type: 3}
@@ -756,9 +730,6 @@ MonoBehaviour:
   cardPrefab: {fileID: 7946799486736855561, guid: c8347f88478e8114e8c90d80bc3565f6, type: 3}
   activePlayerText: {fileID: 39722254}
   text: {fileID: 1903202635}
-  OnPlayCard:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &659926791
 Transform:
   m_ObjectHideFlags: 0
@@ -860,31 +831,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1680003666}
         m_TargetAssemblyTypeName: UI, Assembly-CSharp
-        m_MethodName: StartHost
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 213979773}
-        m_TargetAssemblyTypeName: CardGameManager, Assembly-CSharp
-        m_MethodName: StartHost
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8603049084707426475}
-        m_TargetAssemblyTypeName: Mirror.Discovery.NetworkDiscovery, Mirror.Components
-        m_MethodName: AdvertiseServer
+        m_MethodName: StartHostButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2017,17 +1964,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 213979773}
   m_SourcePrefab: {fileID: 100100000, guid: 3fddb83f9508d4c4cb1985b5c032514a, type: 3}
---- !u!114 &8603049084707426475 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 881156300093329986, guid: 3fddb83f9508d4c4cb1985b5c032514a, type: 3}
-  m_PrefabInstance: {fileID: 8603049084707426474}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213979767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c761308e733c51245b2e8bb4201f46dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Mirror.Components::Mirror.Discovery.NetworkDiscovery
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
