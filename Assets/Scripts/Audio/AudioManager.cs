@@ -1,8 +1,9 @@
 using System;
+using Mirror;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : NetworkBehaviour
 {
     public Sound[] sounds;
 
