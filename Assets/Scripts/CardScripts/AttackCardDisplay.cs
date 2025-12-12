@@ -18,7 +18,7 @@ public class AttackCardDisplay : MonoBehaviour
     
     void Start()
     {
-        nameText.text = card.Name;
+        //nameText.text = card.Name;
         descriptionText.text = card.Description;
         
         artworkImage.sprite = card.artwork;

@@ -622,8 +622,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8927633035288711493}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.15146148, w: 0.98846316}
+  m_LocalPosition: {x: 0.6681004, y: 0.83211726, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -642,9 +642,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 453a3ecd8629c1c42abcf13a593b1cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackCardDisplay
-  card: {fileID: 0}
+  card: {fileID: 11400000, guid: 1a148cbf0e4a33942a96f2ea9683a5de, type: 2}
   nameText: {fileID: 0}
   descriptionText: {fileID: 5790381217853099322}
-  artworkImage: {fileID: 0}
+  artworkImage: {fileID: 3053218189563402005}
   attackText: {fileID: 1640683349137173477}
   takeDamage: {fileID: 0}
