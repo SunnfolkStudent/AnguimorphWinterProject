@@ -33,10 +33,10 @@ public class CardHandController : MonoBehaviour
     private void Start()
     {
         
-        CardHandPositioning();
 
         SOcard = Resources.LoadAll<Card>("CardScrubs").ToList();
         DrawCards();
+        
     }
 
     private void Update()
@@ -92,9 +92,12 @@ public class CardHandController : MonoBehaviour
             
             
             
-            cards.Add(Deck.deckList[randCard]);
+            
             CardHandPositioning();
             var spawnedCard = Instantiate(CardPrefab, Vector3.zero, Quaternion.identity);
+            
+            cards.Add(spawnedCard);
+            
             Debug.Log("end of script reached.");
             
             foreach (Card card in SOcard)
@@ -129,6 +132,7 @@ public class CardHandController : MonoBehaviour
     {
         for (int i = 0; cards.Count > i; i++)
         {
+            Debug.Log("CardHandPositioning is running");
             
             double placeInHand = i / (double)cards.Count;
 
@@ -141,14 +145,21 @@ public class CardHandController : MonoBehaviour
             ) * handHeight;
             double direction = (xPosition * 2 * Math.PI - Math.PI) * -rotationalFactor;
 
+            xPosition -= 0.5;
+            yPosition -= handHeight;
             xPosition *= spacing;
+            
+            xPosition += gameObject.transform.position.x;
+            yPosition += gameObject.transform.position.y;
+            
             //Debug.Log(xPosition);
           
             //float xAxis = i * spacing;
             //cards[i].transform.position = new Vector2(xAxis - 2, -2);
             cards[i].transform.position = new Vector2((float)xPosition, (float)yPosition);
             cards[i].transform.eulerAngles = new Vector3(0f,0f,(float)direction);
-          
+            //cards[i].GetComponent<RectTransform>().position = new Vector2((float)xPosition, (float)yPosition);
+
         }
     }
      
@@ -174,7 +185,4 @@ public class CardHandController : MonoBehaviour
             offsetVelocity *= 0.85f;
         }
     }
-
-    
-    
 }
