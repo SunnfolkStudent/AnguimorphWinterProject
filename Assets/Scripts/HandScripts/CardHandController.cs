@@ -52,7 +52,7 @@ public class CardHandController : MonoBehaviour
             DrawCards();
         }
         
-        if (_input.tap)
+       /* if (_input.tap)
         {
             if (Camera.main != null)
             {
@@ -69,7 +69,7 @@ public class CardHandController : MonoBehaviour
                    
                } 
             }
-        }
+        }*/
              
              
         
