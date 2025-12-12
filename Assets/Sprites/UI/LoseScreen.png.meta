@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3a29cea0bf6fe424d97b0cb67627543e
+guid: bd79ba92d3bc94be8b71e8e6b2ad7bce
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8799113290730160815
-    second: MainMenuQuitButtonSelected_0
+      213: -5346892625442433565
+    second: you lose_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,19 +97,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MainMenuQuitButtonSelected_0
+      name: you lose_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 310
-        width: 53
-        height: 44
+        x: 0
+        y: 0
+        width: 270
+        height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fa2c3601beabc1a70800000000000000
-      internalID: 8799113290730160815
+      spriteID: 3e519587c750cc5b0800000000000000
+      internalID: -5346892625442433565
       vertices: []
       indices: 
       edges: []
@@ -161,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MainMenuQuitButtonSelected_0: 8799113290730160815
+      you lose_0: -5346892625442433565
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

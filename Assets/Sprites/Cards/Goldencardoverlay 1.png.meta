@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8e87a8fa22d647e479639cb5c0605603
+guid: 7c21b5ce662cf4a60a92e32e0101b9f5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4729050851110863523
-    second: Goldencardoverlay_0
+      213: -2460146492572270173
+    second: slass shank ah_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Goldencardoverlay_0
+      name: slass shank ah_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 15
         y: 0
-        width: 80
-        height: 112
+        width: 65
+        height: 95
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d5d37c67e490f5eb0800000000000000
-      internalID: -4729050851110863523
+      spriteID: 3a18ec6accdcbddd0800000000000000
+      internalID: -2460146492572270173
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Goldencardoverlay_0: -4729050851110863523
+      slass shank ah_0: -2460146492572270173
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
