@@ -10,6 +10,12 @@ using Random = UnityEngine.Random;
 public class TestScriptNetwork : NetworkBehaviour
 {
     [SyncVar] public int PlayerID;
+    [SyncVar] public int PlayerSPriteID;
+    public Sprite PlayerSprite
+    {
+        set {PlayerImage.sprite = value;}
+    }
+    [SerializeField] private Image PlayerImage; 
     public GameObject Player;
     [SerializeField] StackManager stackManager;
 
@@ -29,6 +35,8 @@ public class TestScriptNetwork : NetworkBehaviour
     private void Start()
     {
         stackManager = StackManager.Instance;
+        PlayerSprite = CardGameManager.singleton.PlayerSprites[PlayerSPriteID];
+        if (isLocalPlayer) PlayerImage.enabled = false;
     }
 
     public void ChangeValue()

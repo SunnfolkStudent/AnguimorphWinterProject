@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 using Mirror;
 using TMPro;
 using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 /*
 	Documentation: https://mirror-networking.gitbook.io/docs/components/network-manager
@@ -24,6 +25,11 @@ public class CardGameManager : NetworkManager
 		{
 			return Resources.LoadAll<Card>("CardScrubs").ToList();
 		}
+	}
+
+	public List<Sprite> PlayerSprites
+	{
+		get { return Resources.LoadAll<Sprite>("EnemySprites").ToList(); }
 	}
 
 	public Transform hostSpawn
@@ -54,6 +60,7 @@ public class CardGameManager : NetworkManager
 	    GameObject player = Instantiate(playerPrefab);
 	    NetworkServer.AddPlayerForConnection(conn, player);
 	    player.GetComponentInChildren<TestScriptNetwork>().PlayerID = conn.connectionId;
+	    player.GetComponentInChildren<TestScriptNetwork>().PlayerSPriteID = Random.Range(0, PlayerSprites.Count);
 	    players.Add(player);
     }
 
