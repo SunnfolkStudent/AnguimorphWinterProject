@@ -121,11 +121,7 @@ public class CopyCardHandController : MonoBehaviour
     {
         for (int i = 0; cards.Count > i; i++)
         {
-            //Sondres Demo for advanced card interface. WIP*
-            //double SetPosition = 1 / (1 + Mathf.Pow(math.E, - cards.Length * 2.5f * (i / amount - 0.5f)));
-            //float xAxis = (float)SetPosition;
-            //xAxis /= i;
-            //cards[i].transform.position = new Vector2(xAxis, -2);
+            
             double placeInHand = i / (double)cards.Count;
 
             double xPosition = Logistic(

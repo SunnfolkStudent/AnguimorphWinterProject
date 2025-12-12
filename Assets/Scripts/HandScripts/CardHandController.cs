@@ -16,24 +16,34 @@ public class CardHandController : MonoBehaviour
     [SerializeField] private int handMaximum = 3;
     [SerializeField] private GameObject CardPrefab;
     
-    //private int amount = 3;
-
+    // sondre edits
     public float spacing = 3f;
+    public float spread = 2.5f;
+    public float handHeight = 1f;
+    public float rotationalFactor = 10f;
+    public float offset = 0f;
+    public float sensitivity = 30f;
+    public float friction = 0.95f;
+    public float bounce = 10f;
+    private float offsetVelocity = 0f;
+    
     private Vector3 touchPosWorld;
     TouchPhase phaseEnded = TouchPhase.Ended;
 
     private void Start()
     {
-        DrawCards();
+        
         CardHandPositioning();
 
         SOcard = Resources.LoadAll<Card>("CardScrubs").ToList();
-
+        DrawCards();
     }
 
     private void Update()
     {
-        
+        // sondre edits
+        UpdateOffset();
+        CardHandPositioning();
 //reset position
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
@@ -86,7 +96,16 @@ public class CardHandController : MonoBehaviour
             CardHandPositioning();
             var spawnedCard = Instantiate(CardPrefab, Vector3.zero, Quaternion.identity);
             Debug.Log("end of script reached.");
-            //spawnedCard.GetComponent<AttackCardDisplay>().card = SOcard.Find(x => x.ID == 2);
+            
+            foreach (Card card in SOcard)
+            {
+                var randCardId = UnityEngine.Random.Range(0, SOcard.Count);
+                Debug.Log(randCardId);
+                if (card.ID == randCardId)
+                {
+                    spawnedCard.GetComponent<AttackCardDisplay>().card = card;
+                }
+            }
                 
             
             
@@ -98,22 +117,64 @@ public class CardHandController : MonoBehaviour
         {
             SelectedCard.transform.position += new Vector3(0, 2, 0);
         }
-     void CardHandPositioning()
+    double Logistic(double x, float strength)
+        {
+            return 1 / (1 + Math.Pow(Math.E, -strength * (x - 0.5)));
+        }
+        double Circular(double x, float strength)
+        {
+            return Math.Sqrt(1 - strength * strength * (2 * x - 1) * (2 * x - 1));
+        }    
+    void CardHandPositioning()
     {
         for (int i = 0; cards.Count > i; i++)
         {
-            //Sondres Demo for advanced card interface. WIP*
-            //double SetPosition = 1 / (1 + Mathf.Pow(math.E, - cards.Length * 2.5f * (i / amount - 0.5f)));
-          //float xAxis = (float)SetPosition;
-          //xAxis /= i;
-          //cards[i].transform.position = new Vector2(xAxis, -2);
+            
+            double placeInHand = i / (double)cards.Count;
 
+            double xPosition = Logistic(
+                placeInHand + offset,
+                cards.Count * spread
+            );
+            double yPosition = Circular(
+                xPosition, 1
+            ) * handHeight;
+            double direction = (xPosition * 2 * Math.PI - Math.PI) * -rotationalFactor;
+
+            xPosition *= spacing;
+            //Debug.Log(xPosition);
           
-          float xAxis = i * spacing;
-          cards[i].transform.position = new Vector2(xAxis - 2, -2);
+            //float xAxis = i * spacing;
+            //cards[i].transform.position = new Vector2(xAxis - 2, -2);
+            cards[i].transform.position = new Vector2((float)xPosition, (float)yPosition);
+            cards[i].transform.eulerAngles = new Vector3(0f,0f,(float)direction);
           
         }
     }
+     
+    // sondre edits
+    void UpdateOffset()
+    {   
+        float dx = Input.GetAxis("Mouse X");
+        if (Input.GetMouseButton(0))
+        {
+            offsetVelocity += dx * sensitivity / cards.Count;
+        }
+        offsetVelocity *= friction;
+        offset += offsetVelocity * Time.deltaTime;
+        float maxOffset = 0.5f;
+        if (offset < -maxOffset)
+        {
+            offset += (-maxOffset - offset) / bounce;
+            offsetVelocity *= 0.85f;
+        }
+        if (offset > maxOffset)
+        {
+            offset += (maxOffset - offset) / bounce;
+            offsetVelocity *= 0.85f;
+        }
+    }
 
+    
     
 }
