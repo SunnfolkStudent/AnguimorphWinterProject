@@ -30,18 +30,28 @@ public class TestScriptNetwork : NetworkBehaviour
 
     [SyncVar]public int HealthPoints;
 
-    [SerializeField] private TMP_Text healthText;
 
     private void Start()
     {
         stackManager = StackManager.Instance;
         PlayerSprite = CardGameManager.singleton.PlayerSprites[PlayerSPriteID];
         if (isLocalPlayer) PlayerImage.enabled = false;
+        
+            if (isLocalPlayer)
+            {
+                transform.SetParent(CardGameManager.singleton.hostSpawn);
+            }
+            else
+            {
+                transform.SetParent(CardGameManager.singleton.clientSpawn);
+            }
+            GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+            GetComponent<RectTransform>().localPosition = new Vector3(0, 0, 0);
+        
     }
 
     public void ChangeValue()
     {
-        healthText.text = HealthPoints.ToString();
         if (HealthPoints <= 0)
         {
             Debug.Log("No health points left.");

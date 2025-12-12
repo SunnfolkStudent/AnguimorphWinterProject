@@ -36,9 +36,12 @@ public class AttackCardDisplay : MonoBehaviour
         }
     }
     
-    public void OnButtonClick()
+   /* public void OnButtonClick()
     {
-        PlayCard();
-    }
+        foreach (GameObject player in CardGameManager.singleton.Players)
+        {
+            GetComponentInChildren<>()
+        }
+    }*/
     
 }

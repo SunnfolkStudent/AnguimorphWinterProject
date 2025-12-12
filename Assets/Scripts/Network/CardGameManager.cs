@@ -56,11 +56,10 @@ public class CardGameManager : NetworkManager
     public override void OnServerAddPlayer(NetworkConnectionToClient conn)
     {
 	    // add player at correct spawn position
-	    Transform start = numPlayers == 0 ? hostSpawn : clientSpawn;
 	    GameObject player = Instantiate(playerPrefab);
 	    NetworkServer.AddPlayerForConnection(conn, player);
-	    player.GetComponentInChildren<TestScriptNetwork>().PlayerID = conn.connectionId;
-	    player.GetComponentInChildren<TestScriptNetwork>().PlayerSPriteID = Random.Range(0, PlayerSprites.Count);
+	    player.GetComponent<TestScriptNetwork>().PlayerID = conn.connectionId;
+	    player.GetComponent<TestScriptNetwork>().PlayerSPriteID = Random.Range(0, PlayerSprites.Count);
 	    players.Add(player);
     }
 
