@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9083585764258791088
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1119422887585266132}
+  - component: {fileID: 7671129260435240363}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1119422887585266132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9083585764258791088}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 387.927, y: 192.97499, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7671129260435240363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9083585764258791088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0984945c24facb84c8b4c0e99433d479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  sounds:
+  - name: Theme
+    clip: {fileID: 8300000, guid: c1455b197c511f0419f6ab6d2d601b96, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Button1
+    clip: {fileID: 8300000, guid: 1ffbff41db21b4b4ea8c6ec2ca5393e9, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Button2
+    clip: {fileID: 8300000, guid: 483840c0f2c5e004c80b352df189d133, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Button3
+    clip: {fileID: 8300000, guid: e86fdabcb074fbb489fb4acbf1961ffc, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Button4
+    clip: {fileID: 8300000, guid: bee4d9f5e7bc31c45a3607ae0eeb666b, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Button5
+    clip: {fileID: 8300000, guid: a6fd4af6f1af23c4281fe4b032858e51, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: CardPlay1
+    clip: {fileID: 8300000, guid: 61557035ae0e7e648998df719c9dc44e, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: CardPlay2
+    clip: {fileID: 8300000, guid: 14546de8e5df4a84b9dccdefd0a27df4, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: CardPlay3
+    clip: {fileID: 8300000, guid: 933b59c688dbfff478aea593cad1e327, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: ShortVictoryJingle
+    clip: {fileID: 8300000, guid: c2e57128549537d4597b8a9438c9a93d, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: LongVictoryJingle
+    clip: {fileID: 8300000, guid: a1c4a5e76939b404f86f148ffe6c7e34, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: ShortDefeatJingle
+    clip: {fileID: 8300000, guid: 8414acdd97cb4e0499fcb5df7b9d276c, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: LongDefeatJingle
+    clip: {fileID: 8300000, guid: 36feca1417c653c49877764644c82e8c, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: LongDefeatJingle
+    clip: {fileID: 8300000, guid: 36feca1417c653c49877764644c82e8c, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MarkusVictory1
+    clip: {fileID: 8300000, guid: 81e9b7e5ac9c84b49bab3e45293d9b13, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MarkusVictory2
+    clip: {fileID: 8300000, guid: 7ef55bae95ff08349a02b6627c96169b, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MarkusVictory3
+    clip: {fileID: 8300000, guid: 9e99a2cc7a9352944926831dbbe6311a, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MarkusVictory4
+    clip: {fileID: 8300000, guid: f359ffa56c641b34fba040450e916cf8, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: PressingPlay
+    clip: {fileID: 8300000, guid: c5ad7d0692d773249931dbd6d26f8904, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
