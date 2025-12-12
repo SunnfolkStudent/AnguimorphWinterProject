@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 356431026072087101, guid: c8d5877c03d6c7d4e8f392365bc807a0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -206,7 +206,6 @@ GameObject:
   - component: {fileID: 709408251}
   - component: {fileID: 709408250}
   - component: {fileID: 709408249}
-  - component: {fileID: 709408248}
   - component: {fileID: 709408247}
   m_Layer: 5
   m_Name: Canvas
@@ -227,26 +226,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d3613b283c916438b781398fbc1ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeathScreen
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
---- !u!114 &709408248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 709408246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Mirror::Mirror.NetworkIdentity
-  sceneId: 629716153
-  _assetId: 0
-  serverOnly: 0
-  visibility: 0
-  hasSpawned: 0
 --- !u!114 &709408249
 MonoBehaviour:
   m_ObjectHideFlags: 0

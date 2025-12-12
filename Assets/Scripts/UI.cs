@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Mirror.Discovery;
 using UnityEngine;
 
 public class UI : MonoBehaviour
@@ -11,12 +12,18 @@ public class UI : MonoBehaviour
     private void Start()
     {
         AddDescendants(gameObject.transform, children);
-        sprites = Resources.LoadAll<Sprite>("EnemySprites").ToList();
-        enemySprite.GetComponent<SpriteRenderer>().sprite = sprites[Random.Range(0, sprites.Count)];
+        CardGameManager.singleton.OnConnected.AddListener(OnConnect);
+        CardGameManager.singleton.OnDisconnected.AddListener(OnDisconnect);
     }
     public void QuitButton()
     {
         Application.Quit();
+    }
+
+    public void StartHostButton()
+    {
+        CardGameManager.singleton.StartHost();
+        CardGameManager.singleton.gameObject.GetComponent<NetworkDiscovery>().AdvertiseServer();
     }
 
     public void OnConnect()
