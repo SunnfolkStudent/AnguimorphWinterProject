@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 using Mirror;
 using TMPro;
 using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 /*
 	Documentation: https://mirror-networking.gitbook.io/docs/components/network-manager
@@ -17,6 +18,7 @@ using UnityEngine.UIElements;
 public class CardGameManager : NetworkManager
 {
 	[SerializeField] private List<GameObject> players;
+	public List<GameObject> Players { get { return players; } }
 	public List<Card> cards
 	{
 		get
@@ -24,10 +26,22 @@ public class CardGameManager : NetworkManager
 			return Resources.LoadAll<Card>("CardScrubs").ToList();
 		}
 	}
-	[SerializeField] private Transform hostSpawn;
-	[SerializeField] private Transform clientSpawn;
-    // Overrides the base singleton so we don't
-    // have to cast to this type everywhere.
+
+	public List<Sprite> PlayerSprites
+	{
+		get { return Resources.LoadAll<Sprite>("EnemySprites").ToList(); }
+	}
+
+	public Transform hostSpawn
+	{
+		get { return GameObject.Find("HostSpawn").GetComponent<RectTransform>(); }
+	}
+
+	public Transform clientSpawn
+	{
+		get { return GameObject.Find("ClientSpawn").GetComponent<RectTransform>(); }
+	}
+
     public static new CardGameManager singleton => (CardGameManager)NetworkManager.singleton;
 
     public override void Awake()
@@ -43,12 +57,11 @@ public class CardGameManager : NetworkManager
     {
 	    // add player at correct spawn position
 	    Transform start = numPlayers == 0 ? hostSpawn : clientSpawn;
-	    GameObject player = Instantiate(playerPrefab, start.position, start.rotation);
+	    GameObject player = Instantiate(playerPrefab);
 	    NetworkServer.AddPlayerForConnection(conn, player);
 	    player.GetComponentInChildren<TestScriptNetwork>().PlayerID = conn.connectionId;
-	    player.GetComponentInChildren<TestScriptNetwork>().HealthPoints = 100;
+	    player.GetComponentInChildren<TestScriptNetwork>().PlayerSPriteID = Random.Range(0, PlayerSprites.Count);
 	    players.Add(player);
-			   
     }
 
     public override void OnClientConnect()
@@ -66,11 +79,32 @@ public class CardGameManager : NetworkManager
 
     public void DamagePlayer(int damage, int playerID)
     {
+
 	    foreach (GameObject player in players)
+	    {
+		    Debug.Log(player.GetComponentInChildren<TestScriptNetwork>().PlayerID+": played");
 		    if (player.gameObject.GetComponentInChildren<TestScriptNetwork>().PlayerID != playerID)
 		    {
+			    Debug.Log("Damaging player:"+player.gameObject.GetComponentInChildren<TestScriptNetwork>().PlayerID);
 			    player.GetComponentInChildren<TestScriptNetwork>().HealthPoints -= damage;
+			    if (player.GetComponentInChildren<TestScriptNetwork>().HealthPoints <= 0)
+			    {
+				    foreach (GameObject otherPlayer in players)
+				    {
+					    if (otherPlayer != player)
+					    {
+						    otherPlayer.GetComponentInChildren<TestScriptNetwork>().Win();
+
+					    }
+
+					    player.GetComponentInChildren<TestScriptNetwork>().Lose();
+				    }
+
+				    //StopClient();
+				    //StopHost();
+			    }
 		    }
+	    }
     }
     public UnityEvent OnDisconnected;
 }

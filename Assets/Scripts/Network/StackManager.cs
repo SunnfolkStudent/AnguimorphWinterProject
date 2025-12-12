@@ -11,7 +11,7 @@ using TMPro;
 
 public class StackManager : NetworkBehaviour
 {
-	[SyncVar]private int LastPlayedCard;
+	private GameObject LastPlayedCard;
 	[SyncVar]private int ActivePlayer;
 
 	[SerializeField]
@@ -19,6 +19,7 @@ public class StackManager : NetworkBehaviour
 	{
 		get { return CardGameManager.singleton.cards; }
 	}
+	[SerializeField] private GameObject cardPrefab;
 	[SerializeField] private TMP_Text activePlayerText;
 	[SerializeField] private TMP_Text text;
 	public static StackManager Instance;
@@ -40,22 +41,20 @@ public class StackManager : NetworkBehaviour
 	[ClientRpc]
 	public void RpcPlayCard(int cardID, int playerID)																	
 	{
-		if (playerID != ActivePlayer)
+		if (playerID != ActivePlayer || (CardGameManager.singleton.Players.Count <= 1 && isServer))
 		{
-			LastPlayedCard = cardID;
 			ActivePlayer = playerID;
-			text.text = "Player "+ActivePlayer+" Played:"+LastPlayedCard;
+			Destroy(LastPlayedCard);
 			foreach (Card card in cards)
 			{
 				if (card.ID == cardID)
 				{
 					CardGameManager.singleton.DamagePlayer(card.attack, playerID);
-					Debug.Log(card.Name + " damaged");
-					OnPlayCard.Invoke();
+					LastPlayedCard = Instantiate(cardPrefab, GetComponentInChildren<Canvas>().gameObject.transform);
+					LastPlayedCard.GetComponent<AttackCardDisplay>().card = card;
 				}
 			}
 		}
 	}
 	
-	public UnityEvent OnPlayCard;
 }

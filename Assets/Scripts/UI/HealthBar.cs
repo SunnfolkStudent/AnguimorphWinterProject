@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] private Slider slider;
-    [SerializeField] private int maxHealth;
 
     public int CurrentHealth
     {
@@ -20,10 +19,6 @@ public class HealthBar : MonoBehaviour
         set { slider.value = value; }
     }
 
-    public void changeHealth(int amount)
-    {
-        currentHealth += amount;
-    }
     
     
 }
