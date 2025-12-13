@@ -807,7 +807,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d3613b283c916438b781398fbc1ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  gameOverFXClip: {fileID: 8300000, guid: 36feca1417c653c49877764644c82e8c, type: 3}
+  WinFXClip: {fileID: 8300000, guid: a1c4a5e76939b404f86f148ffe6c7e34, type: 3}
+  LoseFXClip: {fileID: 8300000, guid: 36feca1417c653c49877764644c82e8c, type: 3}
+  MarkusFXClip:
+  - {fileID: 8300000, guid: 7ef55bae95ff08349a02b6627c96169b, type: 3}
+  - {fileID: 8300000, guid: 9e99a2cc7a9352944926831dbbe6311a, type: 3}
+  - {fileID: 8300000, guid: f359ffa56c641b34fba040450e916cf8, type: 3}
+  - {fileID: 8300000, guid: 81e9b7e5ac9c84b49bab3e45293d9b13, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
