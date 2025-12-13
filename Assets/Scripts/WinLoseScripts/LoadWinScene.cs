@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadWinScene : NetworkBehaviour
 {
+    
     void Win()
     {
         Debug.Log("Win");
