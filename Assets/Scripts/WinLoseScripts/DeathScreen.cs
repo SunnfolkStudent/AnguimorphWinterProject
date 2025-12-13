@@ -8,9 +8,17 @@ public class DeathScreen : MonoBehaviour
     [SerializeField] private AudioClip LoseFXClip;
     [SerializeField] private AudioClip[] MarkusFXClip;
     [SerializeField] private AudioClip[] buttonSound;
+    private AudioSource audioSource;
     
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
+        if (audioSource != null && audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+        
         if (SceneManager.GetActiveScene().name == "WinScene")
         {
             SoundFXManager.instance.PlayRandomSoundFXClip(MarkusFXClip, transform, 1f);
