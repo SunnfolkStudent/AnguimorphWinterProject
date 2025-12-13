@@ -38,13 +38,16 @@ public class CardHandController : MonoBehaviour
         SOcard = Resources.LoadAll<Card>("CardScrubs").ToList();
         
         DrawCards();
-    }
+        DrawCards();
+        DrawCards();
+    } 
 
     private void Update()
     {
         // sondre edits
         UpdateOffset();
         CardHandPositioning();
+       
         
         
         if (Keyboard.current.dKey.wasPressedThisFrame)
@@ -81,7 +84,7 @@ public class CardHandController : MonoBehaviour
 
     
 
-    void DrawCards()
+    public void DrawCards()
     {
         
         int randCard = UnityEngine.Random.Range(0,Deck.deckList.Count);

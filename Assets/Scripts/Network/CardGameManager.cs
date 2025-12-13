@@ -86,22 +86,6 @@ public class CardGameManager : NetworkManager
 		    {
 			    Debug.Log("Damaging player:"+player.gameObject.GetComponentInChildren<TestScriptNetwork>().PlayerID);
 			    player.GetComponentInChildren<TestScriptNetwork>().HealthPoints -= damage;
-			    if (player.GetComponentInChildren<TestScriptNetwork>().HealthPoints <= 0)
-			    {
-				    foreach (GameObject otherPlayer in players)
-				    {
-					    if (otherPlayer != player)
-					    {
-						    otherPlayer.GetComponentInChildren<TestScriptNetwork>().Win();
-
-					    }
-
-					    player.GetComponentInChildren<TestScriptNetwork>().Lose();
-				    }
-
-				    //StopClient();
-				    //StopHost();
-			    }
 		    }
 	    }
     }

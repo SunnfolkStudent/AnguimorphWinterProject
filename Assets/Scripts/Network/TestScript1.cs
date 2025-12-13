@@ -15,17 +15,21 @@ public class TestScriptNetwork : NetworkBehaviour
     {
         set {PlayerImage.sprite = value;}
     }
+
+    public bool myturn
+    {
+        get
+        {
+            var activePlayer = stackManager.ActivePlayer;
+            if (activePlayer == PlayerID) return false;
+            else return true;
+        }
+    }
     [SerializeField] private Image PlayerImage; 
     public GameObject Player;
     [SerializeField] StackManager stackManager;
 
-    private int number
-    {
-        get
-        {
-            return Random.Range(0,CardGameManager.singleton.cards.Count);
-        }
-    }
+   
     [SerializeField] private HealthBar healthBar;
 
     [SyncVar]public int HealthPoints;
@@ -47,7 +51,7 @@ public class TestScriptNetwork : NetworkBehaviour
             }
             GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
             GetComponent<RectTransform>().localPosition = new Vector3(0, 0, 0);
-        
+        stackManager.StartTurn.AddListener(AutoDraw);
     }
 
     public void ChangeValue()
@@ -62,7 +66,6 @@ public class TestScriptNetwork : NetworkBehaviour
     {
         if (isLocalPlayer)
         {
-            SceneManager.LoadScene("WinScene");
         }
     }
 
@@ -72,10 +75,15 @@ public class TestScriptNetwork : NetworkBehaviour
         {
             SceneManager.LoadScene("LoseScene");
         }
+
+        if (!isLocalPlayer)
+        {
+            SceneManager.LoadScene("WinScene");
+        }
     }
 
     [Command]
-    public void cmdPlayCard()
+    public void cmdPlayCard(int number)
     {
         stackManager.RpcPlayCard(number, PlayerID);
     }
@@ -83,5 +91,14 @@ public class TestScriptNetwork : NetworkBehaviour
     private void FixedUpdate()
     {
         GetComponentInChildren<Slider>().value = HealthPoints;
+        if (HealthPoints <= 0)Lose();
+    }
+
+    private void AutoDraw()
+    {
+        if (isLocalPlayer && stackManager.ActivePlayer != PlayerID)
+        {
+            GameObject.Find("CardHand").GetComponent<CardHandController>().DrawCards();
+        }
     }
 }

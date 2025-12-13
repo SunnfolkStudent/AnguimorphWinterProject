@@ -68,6 +68,17 @@
                 },
                 {
                     "name": "",
+                    "id": "6d453edb-8cf1-4fa0-aea4-261e8282e68a",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Tap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "09b2b84f-65a3-487d-9a3b-8703af1c651e",
                     "path": "<Touchscreen>/delta",
                     "interactions": "",
@@ -79,8 +90,30 @@
                 },
                 {
                     "name": "",
+                    "id": "607c004a-5c1b-4f7b-8b5c-b51d0cbe9bb0",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Swipe",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "17cdf08d-f9a1-420f-9f4b-d78b6d83310c",
                     "path": "<Touchscreen>/Press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "975db035-3d72-496e-87af-2eed49988dfe",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

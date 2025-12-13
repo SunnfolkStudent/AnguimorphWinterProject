@@ -12,7 +12,12 @@ using TMPro;
 public class StackManager : NetworkBehaviour
 {
 	private GameObject LastPlayedCard;
-	[SyncVar]private int ActivePlayer;
+	[SyncVar]private int activePlayer;
+
+	public int ActivePlayer
+	{
+		get { return activePlayer; }
+	}
 
 	[SerializeField]
 	private List<Card> cards
@@ -30,31 +35,27 @@ public class StackManager : NetworkBehaviour
 		else Destroy(this);
 	}
 
-	private void FixedUpdate()
-	{
-		if (ActivePlayer != null)
-		{
-			activePlayerText.text = ActivePlayer.ToString();
-		}
-	}
 	
 	[ClientRpc]
 	public void RpcPlayCard(int cardID, int playerID)																	
 	{
-		if (playerID != ActivePlayer || (CardGameManager.singleton.Players.Count <= 1 && isServer))
+		if (playerID != activePlayer || (CardGameManager.singleton.Players.Count <= 1 && isServer))
 		{
-			ActivePlayer = playerID;
+			activePlayer = playerID;
 			Destroy(LastPlayedCard);
 			foreach (Card card in cards)
 			{
 				if (card.ID == cardID)
 				{
 					CardGameManager.singleton.DamagePlayer(card.attack, playerID);
-					LastPlayedCard = Instantiate(cardPrefab, GetComponentInChildren<Canvas>().gameObject.transform);
+					LastPlayedCard = Instantiate(cardPrefab);
 					LastPlayedCard.GetComponent<AttackCardDisplay>().card = card;
 				}
 			}
+			StartTurn.Invoke();
 		}
 	}
-	
+
+	public UnityEvent StartTurn;
+
 }

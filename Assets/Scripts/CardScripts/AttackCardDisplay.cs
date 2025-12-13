@@ -25,23 +25,23 @@ public class AttackCardDisplay : MonoBehaviour
         
         attackText.text = card.attack.ToString();
         
+        GetComponentInChildren<Canvas>().worldCamera = Camera.main;
+        
         
     }
-
-    public void PlayCard()
+    
+    public void OnButtonClick()
     {
-        if (card != null)
+        Debug.Log(card.Name+" Clicked");
+        foreach (TestScriptNetwork player in FindObjectsOfType<TestScriptNetwork>())
         {
-            takeDamage.TakeDamage(card.attack);
+            if (player.isLocalPlayer && player.myturn)
+            {
+                Debug.Log("Playing:" + card.Name);
+                player.cmdPlayCard(card.ID);
+                GameObject.Find("CardHand").GetComponent<CardHandController>().cards.Remove(gameObject);
+                Destroy(gameObject);
+            }
+        }
         }
     }
-    
-   /* public void OnButtonClick()
-    {
-        foreach (GameObject player in CardGameManager.singleton.Players)
-        {
-            GetComponentInChildren<>()
-        }
-    }*/
-    
-}
