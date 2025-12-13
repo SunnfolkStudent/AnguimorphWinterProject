@@ -9,6 +9,9 @@ public class UI : MonoBehaviour
     private List<Sprite> sprites;
     
     public GameObject enemySprite;
+    
+    [SerializeField] private AudioClip playButtonSound;
+    [SerializeField] private AudioClip[] buttonSound;
     private void Start()
     {
         AddDescendants(gameObject.transform, children);
@@ -17,11 +20,13 @@ public class UI : MonoBehaviour
     }
     public void QuitButton()
     {
+        SoundFXManager.instance.PlayRandomSoundFXClip(buttonSound, transform, 1f);
         Application.Quit();
     }
 
     public void StartHostButton()
     {
+        SoundFXManager.instance.PlaySoundFXClip(playButtonSound, transform, 1f);
         CardGameManager.singleton.StartHost();
         CardGameManager.singleton.gameObject.GetComponent<NetworkDiscovery>().AdvertiseServer();
     }
