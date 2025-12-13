@@ -47,6 +47,11 @@ public class CardHandController : MonoBehaviour
         // sondre edits
         UpdateOffset();
         CardHandPositioning();
+
+        foreach (GameObject card in cards)
+        {
+            card.GetComponentInChildren<Canvas>().sortingOrder = cards.IndexOf(card);
+        }
        
         
         

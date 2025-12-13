@@ -592,6 +592,9 @@ MonoBehaviour:
   cardPrefab: {fileID: 8927633035288711493, guid: 6ade6b4b1b9114141977c12a26efb01f, type: 3}
   activePlayerText: {fileID: 0}
   text: {fileID: 0}
+  StartTurn:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &659926791
 Transform:
   m_ObjectHideFlags: 0
@@ -1592,7 +1595,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!224 &1680003670
 RectTransform:
