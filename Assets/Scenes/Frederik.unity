@@ -959,6 +959,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8927633035288711493, guid: 6ade6b4b1b9114141977c12a26efb01f, type: 3}
     - target: {fileID: 3757242116662043599, guid: 6e6013e136f923c4ab75384ab928b5d5, type: 3}
+      propertyPath: sensitivity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3757242116662043599, guid: 6e6013e136f923c4ab75384ab928b5d5, type: 3}
       propertyPath: SOcard.Array.size
       value: 0
       objectReference: {fileID: 0}

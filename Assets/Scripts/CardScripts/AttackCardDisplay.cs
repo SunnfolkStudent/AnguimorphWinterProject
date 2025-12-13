@@ -41,6 +41,7 @@ public class AttackCardDisplay : MonoBehaviour
             if (player.isLocalPlayer && player.myturn)
             {
                 Debug.Log("Playing:" + card.Name);
+                if (card.ID == 4) GameObject.Find("CardHand").GetComponent<CardHandController>().DrawCards();
                 player.cmdPlayCard(card.ID);
                 GameObject.Find("CardHand").GetComponent<CardHandController>().cards.Remove(gameObject);
                 Destroy(gameObject);

@@ -50,7 +50,7 @@ namespace Mirror.Discovery
 
         void DrawGUI()
         {
-            GUILayout.BeginArea(new Rect(10, 10, 300, 500));
+            GUILayout.BeginArea(new Rect(10, 30, 300, 500));
             GUILayout.BeginHorizontal();
 
             if (GUILayout.Button("Find Servers"))
@@ -60,7 +60,7 @@ namespace Mirror.Discovery
             }
 
             // LAN Host
-            if (GUILayout.Button("Start Host"))
+            /*if (GUILayout.Button("Start Host"))
             {
                 discoveredServers.Clear();
                 NetworkManager.singleton.StartHost();
@@ -73,7 +73,7 @@ namespace Mirror.Discovery
                 discoveredServers.Clear();
                 NetworkManager.singleton.StartServer();
                 networkDiscovery.AdvertiseServer();
-            }
+            }*/
 
             GUILayout.EndHorizontal();
 
