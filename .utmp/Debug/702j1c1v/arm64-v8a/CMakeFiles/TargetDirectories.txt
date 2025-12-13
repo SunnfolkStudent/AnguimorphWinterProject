@@ -1,0 +1,8 @@
+C:/Users/frede/GameDesignfhs/AnguimorphWinterProject/.utmp/Debug/702j1c1v/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/frede/GameDesignfhs/AnguimorphWinterProject/.utmp/Debug/702j1c1v/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Users/frede/GameDesignfhs/AnguimorphWinterProject/.utmp/Debug/702j1c1v/arm64-v8a/GameActivity/CMakeFiles/game.dir
+C:/Users/frede/GameDesignfhs/AnguimorphWinterProject/.utmp/Debug/702j1c1v/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+C:/Users/frede/GameDesignfhs/AnguimorphWinterProject/.utmp/Debug/702j1c1v/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
+C:/Users/frede/GameDesignfhs/AnguimorphWinterProject/.utmp/Debug/702j1c1v/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+C:/Users/frede/GameDesignfhs/AnguimorphWinterProject/.utmp/Debug/702j1c1v/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+C:/Users/frede/GameDesignfhs/AnguimorphWinterProject/.utmp/Debug/702j1c1v/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir
