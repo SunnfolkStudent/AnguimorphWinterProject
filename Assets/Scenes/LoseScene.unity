@@ -814,6 +814,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9e99a2cc7a9352944926831dbbe6311a, type: 3}
   - {fileID: 8300000, guid: f359ffa56c641b34fba040450e916cf8, type: 3}
   - {fileID: 8300000, guid: 81e9b7e5ac9c84b49bab3e45293d9b13, type: 3}
+  buttonSound:
+  - {fileID: 8300000, guid: 1ffbff41db21b4b4ea8c6ec2ca5393e9, type: 3}
+  - {fileID: 8300000, guid: 483840c0f2c5e004c80b352df189d133, type: 3}
+  - {fileID: 8300000, guid: e86fdabcb074fbb489fb4acbf1961ffc, type: 3}
+  - {fileID: 8300000, guid: bee4d9f5e7bc31c45a3607ae0eeb666b, type: 3}
+  - {fileID: 8300000, guid: a6fd4af6f1af23c4281fe4b032858e51, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

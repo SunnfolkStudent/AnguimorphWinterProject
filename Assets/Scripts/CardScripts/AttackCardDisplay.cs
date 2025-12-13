@@ -16,6 +16,8 @@ public class AttackCardDisplay : MonoBehaviour
 
     public TestPlayerHealthBar takeDamage;
     
+    [SerializeField] private AudioClip[] playCardSound;
+    
     void Start()
     {
         //nameText.text = card.Name;
@@ -33,6 +35,7 @@ public class AttackCardDisplay : MonoBehaviour
     public void OnButtonClick()
     {
         Debug.Log(card.Name+" Clicked");
+        SoundFXManager.instance.PlayRandomSoundFXClip(playCardSound, transform, 1f);
         foreach (TestScriptNetwork player in FindObjectsOfType<TestScriptNetwork>())
         {
             if (player.isLocalPlayer && player.myturn)

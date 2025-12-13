@@ -807,6 +807,10 @@ MonoBehaviour:
   artworkImage: {fileID: 8448514457283744209}
   attackText: {fileID: 2544140155681401358}
   takeDamage: {fileID: 0}
+  playCardSound:
+  - {fileID: 8300000, guid: 61557035ae0e7e648998df719c9dc44e, type: 3}
+  - {fileID: 8300000, guid: 14546de8e5df4a84b9dccdefd0a27df4, type: 3}
+  - {fileID: 8300000, guid: 933b59c688dbfff478aea593cad1e327, type: 3}
 --- !u!114 &6489392947494912562
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class DeathScreen : MonoBehaviour
     [SerializeField] private AudioClip WinFXClip;
     [SerializeField] private AudioClip LoseFXClip;
     [SerializeField] private AudioClip[] MarkusFXClip;
+    [SerializeField] private AudioClip[] buttonSound;
     
     void Start()
     {
@@ -24,6 +25,7 @@ public class DeathScreen : MonoBehaviour
     
     public void LoadSceneByName()
     {
+        SoundFXManager.instance.PlayRandomSoundFXClip(buttonSound, transform, 1f);
         SceneManager.LoadScene("Frederik");
         CardGameManager.singleton.StopClient();
         CardGameManager.singleton.StopHost();
