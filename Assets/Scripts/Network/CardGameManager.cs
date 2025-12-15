@@ -81,7 +81,7 @@ public class CardGameManager : NetworkManager
 
 	    foreach (GameObject player in players)
 	    {
-		    Debug.Log(player.GetComponentInChildren<TestScriptNetwork>().PlayerID+": played");
+		    //Debug.Log(player.GetComponentInChildren<TestScriptNetwork>().PlayerID+": played");
 		    if (player.gameObject.GetComponentInChildren<TestScriptNetwork>().PlayerID != playerID)
 		    {
 			    Debug.Log("Damaging player:"+player.gameObject.GetComponentInChildren<TestScriptNetwork>().PlayerID);
