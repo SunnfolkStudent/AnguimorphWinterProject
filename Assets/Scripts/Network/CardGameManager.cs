@@ -73,7 +73,14 @@ public class CardGameManager : NetworkManager
     public override void OnClientDisconnect()
     {
 	    base.OnClientDisconnect();
+	    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	    OnDisconnected.Invoke();
+    }
+
+    public override void OnServerDisconnect(NetworkConnectionToClient conn)
+    {
+	    base.OnServerDisconnect(conn);
+	    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void DamagePlayer(int damage, int playerID)
@@ -81,11 +88,15 @@ public class CardGameManager : NetworkManager
 
 	    foreach (GameObject player in players)
 	    {
-		    //Debug.Log(player.GetComponentInChildren<TestScriptNetwork>().PlayerID+": played");
-		    if (player.gameObject.GetComponentInChildren<TestScriptNetwork>().PlayerID != playerID)
+		    if (player.gameObject.GetComponentInChildren<TestScriptNetwork>().PlayerID != playerID && damage > 0)
 		    {
 			    Debug.Log("Damaging player:"+player.gameObject.GetComponentInChildren<TestScriptNetwork>().PlayerID);
 			    player.GetComponentInChildren<TestScriptNetwork>().HealthPoints -= damage;
+		    }
+		    else
+		    {
+			    Debug.Log("Healing player:"+player.gameObject.GetComponentInChildren<TestScriptNetwork>().PlayerID);
+			    player.GetComponentInChildren<TestScriptNetwork>().HealthPoints -= damage; 
 		    }
 	    }
     }

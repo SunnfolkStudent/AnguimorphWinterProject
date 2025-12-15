@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Card
   ID: 1
   Name: Bar Stool
-  Description: Reduce To 1 Damage
+  Description: Heal for 3
   artwork: {fileID: 21300000, guid: 88a21d4277de6ef41bdcd619ca7b4c6e, type: 3}
-  attack: 0
+  attack: -3
   damageReduction: 0.1
   cardType: 2
