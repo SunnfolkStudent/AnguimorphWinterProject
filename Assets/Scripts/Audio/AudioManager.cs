@@ -6,6 +6,7 @@ using UnityEngine.Audio;
 public class AudioManager : NetworkBehaviour
 {
     public Sound[] sounds;
+    public Sound[] buttons;
 
     public static AudioManager instance;
     
@@ -46,4 +47,6 @@ public class AudioManager : NetworkBehaviour
         }
         s.source.Play();
     }
+
+    
 }
