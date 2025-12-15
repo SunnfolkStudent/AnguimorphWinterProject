@@ -73,7 +73,14 @@ public class CardGameManager : NetworkManager
     public override void OnClientDisconnect()
     {
 	    base.OnClientDisconnect();
+	    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	    OnDisconnected.Invoke();
+    }
+
+    public override void OnServerDisconnect(NetworkConnectionToClient conn)
+    {
+	    base.OnServerDisconnect(conn);
+	    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void DamagePlayer(int damage, int playerID)
