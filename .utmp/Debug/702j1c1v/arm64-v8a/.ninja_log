@@ -1,12 +1,12 @@
 # ninja log v5
-66	246	7872958706377691	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	4dbf956a2b295a7
-247	421	7872958707933330	C:/Users/frede/GameDesignfhs/AnguimorphWinterProject/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/702j1c1v/obj/arm64-v8a/libswappywrapper.so	e7b6fa805385e47
-21	1645	7872958720338040	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	4c62cdaa182e4eb9
-0	1655	7872958720423583	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	8f8ed87dfb950067
-37	1660	7872958720478631	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	2deb49824ee99dc5
-46	1674	7872958720604623	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	601f4aa52846f350
-8	1682	7872958720719689	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	a0d325403dc171db
-55	1740	7872958721313608	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	2a03d92b73a116e5
-29	1780	7872958721718801	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	a9f3045be2e2476f
-14	1806	7872958721974826	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	55f7e8922265e91f
-1806	1905	7872958722979773	C:/Users/frede/GameDesignfhs/AnguimorphWinterProject/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/702j1c1v/obj/arm64-v8a/libgame.so	dda25761f63df2e8
+56	267	7875102094663023	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	4dbf956a2b295a7
+271	505	7875102096819749	C:/Users/frede/GameDesignfhs/AnguimorphWinterProject/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/702j1c1v/obj/arm64-v8a/libswappywrapper.so	e7b6fa805385e47
+7	1269	7875102104659590	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	8f8ed87dfb950067
+47	1276	7875102104624456	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	601f4aa52846f350
+30	1279	7875102104644513	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	2deb49824ee99dc5
+23	1281	7875102104554094	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	4c62cdaa182e4eb9
+1	1290	7875102104849234	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	a0d325403dc171db
+38	1304	7875102105043621	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	2a03d92b73a116e5
+18	1360	7875102105606655	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	a9f3045be2e2476f
+13	1382	7875102105792508	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	55f7e8922265e91f
+1382	1560	7875102107609066	C:/Users/frede/GameDesignfhs/AnguimorphWinterProject/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/702j1c1v/obj/arm64-v8a/libgame.so	dda25761f63df2e8
