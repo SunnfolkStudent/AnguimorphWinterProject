@@ -85,7 +85,6 @@ public class CardGameManager : NetworkManager
 
     public void DamagePlayer(int damage, int playerID)
     {
-
 	    foreach (GameObject player in players)
 	    {
 		    if (player.gameObject.GetComponentInChildren<TestScriptNetwork>().PlayerID != playerID && damage > 0)
@@ -93,10 +92,10 @@ public class CardGameManager : NetworkManager
 			    Debug.Log("Damaging player:"+player.gameObject.GetComponentInChildren<TestScriptNetwork>().PlayerID);
 			    player.GetComponentInChildren<TestScriptNetwork>().HealthPoints -= damage;
 		    }
-		    else
+		    else if(player.gameObject.GetComponentInChildren<TestScriptNetwork>().PlayerID == playerID && damage < 0)
 		    {
-			    Debug.Log("Healing player:"+player.gameObject.GetComponentInChildren<TestScriptNetwork>().PlayerID);
-			    player.GetComponentInChildren<TestScriptNetwork>().HealthPoints -= damage; 
+			    Debug.Log("Healing player:" + player.gameObject.GetComponentInChildren<TestScriptNetwork>().PlayerID);
+			    player.GetComponentInChildren<TestScriptNetwork>().HealthPoints -= damage;
 		    }
 	    }
     }
