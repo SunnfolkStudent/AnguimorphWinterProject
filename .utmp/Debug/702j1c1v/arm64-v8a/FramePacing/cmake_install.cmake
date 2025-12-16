@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/frede/GameDesignfhs/AnguimorphWinterProject/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/FramePacing
+# Install script for directory: C:/Users/frede/GameDesignfhs/AnguimorphWinterProject/Library/PramData/AndroidApplicationController/Cache/com.Anguimorpha.TavernTrouble/gradle-project/unityLibrary/src/main/cpp/FramePacing
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

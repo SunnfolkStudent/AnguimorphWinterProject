@@ -12,7 +12,7 @@ public class DeathScreen : MonoBehaviour
     
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSource = AudioManager.instance.GetComponent<AudioSource>();
 
         if (audioSource != null && audioSource.isPlaying)
         {
